@@ -1,0 +1,9 @@
+CREATE TABLE phonebooks (
+	idx INT PRIMARY KEY AUTO_INCREMENT, 
+	name VARCHAR(30) NOT NULL,
+	phone VARCHAR(20) NOT NULL, 
+	address VARCHAR(100)
+	);
+	
+	SHOW TABLES;
+	DESC phonebooks;

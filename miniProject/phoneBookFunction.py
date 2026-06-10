@@ -79,5 +79,5 @@ def search_data():
     cursor.close()
     conn.close()
     
-def update_data(): 
-        
+def update_data():
+    
