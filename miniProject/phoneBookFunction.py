@@ -64,7 +64,7 @@ def search_data():
     
     cursor.execute(sql, (search_name,))
     
-    row = cursor.fetchall()
+    row = cursor.fetchone()
     
     if row:
         
@@ -80,4 +80,66 @@ def search_data():
     conn.close()
     
 def update_data():
+
+    search_name = input("수정할 이름 : ")
+
+    new_phone = input("새 전화번호 : ")
+    new_address = input("새 주소 : ")
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    sql = """
+    UPDATE phonebooks
+    SET phone=%s,
+        address=%s
+    WHERE name=%s
+    """
+
+    result = cursor.execute(
+        sql,
+        (new_phone,
+         new_address,
+         search_name)
+    )
+
+    conn.commit()
+
+    if result:
+        print("수정 완료")
+    else:
+        print("해당 이름 없음")
+
+    cursor.close()
+    conn.close()
+    
+def delete_data():
+
+    search_name = input("삭제할 이름 : ")
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    sql = """
+    DELETE FROM phonebooks
+    WHERE name=%s
+    """
+
+    result = cursor.execute(
+        sql,
+        (search_name,)
+    )
+
+    conn.commit()
+
+    if result:
+        print("삭제 완료")
+    else:
+        print("해당 이름 없음")
+
+    cursor.close()
+    conn.close()
+
+    
+    
     

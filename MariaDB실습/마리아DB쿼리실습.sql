@@ -170,3 +170,23 @@ INSERT INTO board (title, content, id, visitcount) VALUES
 INSERT INTO board (title, content, id, postdate, visitcount) VALUES
 ('과거 날짜 데이터 예시', '내용입니다.', 'test_user', '2026-05-01 14:30:00', 5);
 SELECT * FROM board;
+
+#########################################
+#미니프로젝트 폰북 만들기
+CREATE TABLE phonebooks (
+idx INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(30) NOT NULL,
+phone VARCHAR(20)	NOT NULL, 
+address VARCHAR(100) 
+);
+
+USE sample_db;
+SHOW TABLES;
+
+
+
+
+
+
+
+

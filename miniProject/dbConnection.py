@@ -7,7 +7,7 @@ def get_connection():
        host='localhost',
        user='sample_user',
        password='1234',
-       db='kosmo_db',
+       db='sample_db',
        charset='utf8'
     )
     
